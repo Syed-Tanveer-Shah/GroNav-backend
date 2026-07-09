@@ -1,0 +1,13 @@
+﻿[
+    {
+        "id": 8,
+        "name": "Beef Meat",
+        "branch": 3,
+        "branch_name": "Gilani Mart Abbottabad Branch",
+        "category": 2,
+        "category_name": "Meat",
+        "price": "3.00",
+        "stock": 50,
+        "image": "http://127.0.0.1:8000/media/product_images/placeholder.jpg"
+    }
+]

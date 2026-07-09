@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Gro.Nav – Confirm Your Email</title>
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; }
+    img { -ms-interpolation-mode: bicubic; border: 0; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f0;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .wrapper {
+      width: 100%;
+      background-color: #f0f4f0;
+      padding: 40px 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #2e7d32 0%, #4CAF50 60%, #66bb6a 100%);
+      padding: 40px 40px 32px;
+      text-align: center;
+    }
+
+    .logo-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50px;
+      padding: 8px 24px;
+      margin-bottom: 20px;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .logo-dot {
+      color: #c8e6c9;
+    }
+
+    .header-icon {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .header-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* Body */
+    .body-content {
+      padding: 40px 40px 32px;
+    }
+
+    .greeting {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1b5e20;
+      margin: 0 0 16px;
+    }
+
+    .message-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444444;
+      margin: 0 0 28px;
+    }
+
+    /* CTA Button */
+    .btn-container {
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .btn-confirm {
+      display: inline-block;
+      background: linear-gradient(135deg, #2e7d32, #4CAF50);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 16px 48px;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(76, 175, 80, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    /* Info box */
+    .info-box {
+      background-color: #f1f8e9;
+      border-left: 4px solid #4CAF50;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 24px 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 13px;
+      color: #555555;
+      line-height: 1.6;
+    }
+
+    .info-box a {
+      color: #2e7d32;
+      word-break: break-all;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #e8f5e9;
+      margin: 32px 0 24px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #f9fbe7;
+      border-top: 1px solid #e8f5e9;
+      padding: 24px 40px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: #4CAF50;
+      margin: 0 0 8px;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #888888;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .footer-warning {
+      font-size: 12px;
+      color: #999999;
+      margin: 12px 0 0;
+      font-style: italic;
+    }
+
+    @media only screen and (max-width: 620px) {
+      .container { border-radius: 0; }
+      .header, .body-content, .footer { padding-left: 24px; padding-right: 24px; }
+      .header-title { font-size: 22px; }
+      .btn-confirm { padding: 14px 32px; font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+
+      <!-- ── Header ── -->
+      <div class="header">
+        <div class="logo-badge">
+          <p class="logo-text">Gro<span class="logo-dot">.</span>Nav</p>
+        </div>
+        <span class="header-icon">🎉</span>
+        <h1 class="header-title">Welcome to Gro.Nav!</h1>
+      </div>
+
+      <!-- ── Body ── -->
+      <div class="body-content">
+
+        <p class="greeting">Hello, {{ user.username }}!</p>
+
+        <p class="message-text">
+          Thank you for joining <strong>Gro.Nav</strong> — your smart grocery navigator.
+          We're excited to have you on board!
+        </p>
+
+        <p class="message-text">
+          To get started, please confirm your email address by clicking the button below.
+          This helps us keep your account secure and ensures you receive important updates.
+        </p>
+
+        <!-- CTA Button -->
+        <div class="btn-container">
+          <a href="{{ activate_url }}" class="btn-confirm" target="_blank">
+            ✅ &nbsp;Confirm Email Address
+          </a>
+        </div>
+
+        <!-- Fallback link -->
+        <div class="info-box">
+          <p>
+            <strong>Button not working?</strong> Copy and paste this link into your browser:
+            <br />
+            <a href="{{ activate_url }}">{{ activate_url }}</a>
+          </p>
+        </div>
+
+        <hr class="divider" />
+
+        <p class="message-text" style="font-size:13px; color:#777;">
+          This confirmation link will expire after <strong>3 days</strong>.
+          If it expires, simply register again to receive a new link.
+        </p>
+
+      </div>
+
+      <!-- ── Footer ── -->
+      <div class="footer">
+        <p class="footer-logo">🛒 Gro.Nav</p>
+        <p class="footer-text">
+          Your smart grocery navigation companion.<br />
+          Helping you find the best prices near you.
+        </p>
+        <p class="footer-warning">
+          If you did not create an account with Gro.Nav, you can safely ignore this email.
+          No account will be activated without clicking the confirmation link.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
