@@ -84,16 +84,19 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3002',
     'http://localhost:3000',
     'https://gro-nav-frontend.vercel.app',
+    'https://gro-nav-frontend-k9qu.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://gro-nav-frontend.vercel.app',
+    'https://gro-nav-frontend-k9qu.vercel.app',
     'https://gronav-backend.onrender.com',
+    'http://localhost:3002',
 ]
 
 ROOT_URLCONF = 'core.urls'
