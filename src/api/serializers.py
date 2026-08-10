@@ -103,6 +103,20 @@ class StoreSerializer(serializers.ModelSerializer):
     logo = serializers.ImageField(required=False, allow_null=True)
     logo_url = serializers.SerializerMethodField()
     seller_type = serializers.SerializerMethodField()
+    description = serializers.SerializerMethodField()
+    email = serializers.SerializerMethodField()
+    website = serializers.SerializerMethodField()
+
+    def get_description(self, obj):
+        return getattr(obj, 'description', '') or ''
+
+    def get_email(self, obj):
+        if hasattr(obj, 'seller') and obj.seller and hasattr(obj.seller, 'user') and obj.seller.user:
+            return obj.seller.user.email or ''
+        return getattr(obj, 'email', '') or ''
+
+    def get_website(self, obj):
+        return getattr(obj, 'website', '') or ''
 
     def get_logo_url(self, obj):
         if obj.logo:
@@ -153,7 +167,10 @@ class StoreSerializer(serializers.ModelSerializer):
         read_only_fields = ['seller']
 
     def get_avg_rating(self, obj):
-        return obj.storerating_set.aggregate(Avg('rating'))['rating__avg'] or 0
+        if hasattr(obj, 'avg_rating') and obj.avg_rating is not None:
+            return round(float(obj.avg_rating), 1)
+        res = obj.storerating_set.aggregate(Avg('rating'))['rating__avg']
+        return round(float(res), 1) if res is not None else 0
 
     def get_is_verified(self, obj):
         seller_store = getattr(obj, 'sellerstore_set', None)

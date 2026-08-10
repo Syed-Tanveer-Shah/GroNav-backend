@@ -1,3 +1,4 @@
+import traceback
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from rest_framework import generics, viewsets, permissions
@@ -229,6 +230,14 @@ class StoreListAPIView(generics.ListAPIView):
             '-review_count',
             '-created_at'
         )
+
+    def get(self, request, *args, **kwargs):
+        try:
+            return super().get(request, *args, **kwargs)
+        except Exception as e:
+            print(f"STORE ERROR: {e}")
+            print(traceback.format_exc())
+            return JsonResponse({'error': str(e)}, status=500)
 
 
 
